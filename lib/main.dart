@@ -80,7 +80,10 @@ class _QuestionAppState extends State<QuestionApp> {
                   questionSelect: _questionSelected,
                   onSelected: _answerQuestion,
                 ))
-              : const Center(child: Result())),
+              : Center(
+                  child: Result(
+                  totalGrade: _totalGrade,
+                ))),
     );
   }
 }
