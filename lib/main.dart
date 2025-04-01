@@ -59,6 +59,13 @@ class _QuestionAppState extends State<QuestionApp> {
     print(_totalGrade);
   }
 
+  void reloadQuiz() {
+    setState(() {
+      _questionSelected = 0;
+      _totalGrade = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -83,6 +90,7 @@ class _QuestionAppState extends State<QuestionApp> {
               : Center(
                   child: Result(
                   totalGrade: _totalGrade,
+                  onReload: reloadQuiz,
                 ))),
     );
   }
